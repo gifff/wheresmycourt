@@ -1,13 +1,13 @@
 # wheresmycourt
 Where's My Court?
 
-functional requirement:
+## functional requirement:
 1. System dapat melakukan :
-  1.1 Register
-  1.2 Log in
-  1.3 Log out
-2. System dapat melakukan pemesanan lapngan olahraga
-3. Memuat berita event yang ada dimalang
+  1. Register
+  1. Log in
+  1. Log out
+1. System dapat melakukan pemesanan lapngan olahraga
+1. Memuat berita event yang ada dimalang
 
 fitur:
-1. cek jadwal
+- [ ] cek jadwal
