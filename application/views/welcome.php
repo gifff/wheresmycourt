@@ -13,10 +13,10 @@
     
     <!-- Favicons
     ================================================== -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="<?= base_url('HTML/Skuy/img/favicon.ico'); ?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?= base_url('HTML/Skuy/img/apple-touch-icon.png'); ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?= base_url('HTML/Skuy/img/apple-touch-icon-72x72.png'); ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?= base_url('HTML/Skuy/img/apple-touch-icon-114x114.png'); ?>">
 
 	 <!-- Image
     ================================================== -->
@@ -27,15 +27,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css"  href="<?= base_url('HTML/Skuy/css/bootstrap.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('HTML/Skuy/fonts/font-awesome/css/font-awesome.css'); ?>">
 
     <!-- Stylesheet
     ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css"  href="<?= base_url('HTML/Skuy/css/style.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('HTML/Skuy/css/responsive.css'); ?>">
 
-    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/modernizr.custom.js'); ?>"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
@@ -109,23 +109,37 @@
                 
                   </div>
                   <div class="media-body">
+<<<<<<< HEAD:HTML/Skuy/Pilih Lapangan.html
 				  <a href="#tf-contact" class="btn btn-primary my-btna">Booking</a>
                    
+=======
+                    <h4 class="media-heading">Badminton</h4>
+                    <p>suatu olahraga raket yang dimainkan oleh dua orang (untuk tunggal) atau dua pasangan (untuk ganda) yang saling berlawanan.</p>
+>>>>>>> develop:application/views/welcome.php
                   </div>
                 </div>
 			
             </div>
 
             <div class="col-md-4">
+<<<<<<< HEAD:HTML/Skuy/Pilih Lapangan.html
 			
 			<img src="img/basket.png" style="margin-left:100px; height:165px; width:165px"/>
 			
+=======
+
+>>>>>>> develop:application/views/welcome.php
                 <div class="media">
                   <div class="media-left media-middle">
                     
                   </div>
                   <div class="media-body">
+<<<<<<< HEAD:HTML/Skuy/Pilih Lapangan.html
 					  <a href="#tf-contact" class="btn btn-primary my-btna">Booking</a>
+=======
+                    <h4 class="media-heading">Basket</h4>
+                    <p> olahraga bola berkelompok yang terdiri atas dua tim beranggotakan masing-masing lima orang yang saling bertanding mencetak poin dengan memasukkan bola ke dalam keranjang lawan.</p>
+>>>>>>> develop:application/views/welcome.php
                   </div>
                 </div>
 
@@ -214,13 +228,13 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/jquery.1.11.1.js'); ?>"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/bootstrap.js'); ?>"></script>
 
     <!-- Javascripts
     ================================================== -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/main.js'); ?>"></script>
 
   </body>
 </html>

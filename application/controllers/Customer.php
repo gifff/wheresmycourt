@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Customer extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,6 @@ class Welcome extends CI_Controller {
 
 	public function loginok()
 	{
-		$this->load->helper('url');
-		$this->load->view('welcome');
+		echo "Login: OK. You're Customer.";
 	}
 }
