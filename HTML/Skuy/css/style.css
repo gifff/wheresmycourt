@@ -64,6 +64,15 @@ a:focus{
 	color: #cfcfcf;
 }
 
+#tf-home1{
+	
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	color: #cfcfcf;
+}
+
 #tf-home .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
@@ -158,6 +167,21 @@ a.btn {
 	transition: all 0.5s;
 }
 button.btn.btn-primary.my-btn,
+
+a.btn.btn-primary.my-btna {
+	text-align: center;
+	background: #2F937B;
+	border-color: transparent;
+	border-radius: 0px;
+	border-width: 2px;
+	padding: 10px 30px;
+	margin: 50px 0px 0px 110px;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
 a.btn.btn-primary.my-btn {
 	background: #2F937B;
 	border-color: transparent;
@@ -300,3 +324,63 @@ nav#tf-footer {
 	padding: 3% 0 2% 0;
 	color: #f1f1f1;
 }
+
+
+/*---------------------------- Images SlideShow------------------------------ */
+
+#slider {
+    width: 500px; /* important to be same as image width */
+    height: 300px; /* important to be same as image height */
+    position: relative; /* important */
+	overflow: hidden; /* important */
+}
+#sliderContent {
+    width: 500px; /* important to be same as image width or wider */
+    position: absolute;
+	right: 0;
+	margin: 0;
+}
+.sliderImage {
+    float: left;
+    position: relative;
+	display: none;
+}
+.sliderImage span {
+    position: absolute;
+	font: 10px/15px Arial, Helvetica, sans-serif;
+    padding: 10px 13px;
+    width: 474px;
+    background-color: #000;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+    opacity: 0.5;
+    color: #fff;
+    display: none;
+}
+.clear {
+	clear: both;
+}
+.sliderImage span strong {
+    font-size: 14px;
+}
+.top {
+	top: 0;
+	left: 0;
+}
+.bottom {
+	bottom: 0;
+    left: 0;
+}
+ul { list-style-type: none;}
+
+
+
+
+
+
+
+
+
+
+
