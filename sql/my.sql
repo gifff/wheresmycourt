@@ -76,10 +76,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`) VALUES
-(1, 'gifarydhimas', '$2a$10$a2ZDBIeG3r7GbQKMHtTvjesT5XNQ/5B47L6AFyBQ2nqztqOKw6mZy', 'gifarydhimas@yahoo.com', 1, 0, NULL, NULL, NULL, NULL, '8dffa36cac0158010fee7f169009483d', '::1', '2017-01-27 08:45:02', '2016-01-30 08:55:01', '2017-01-27 07:45:02'),
-(2, 'ninamaulina', '$2a$10$XBAA9vDZJN9iDd1eYiqjLePDHVyZg2yVcpLb5UaI2zdso1gQG1ZJS', 'nina.maulina71@gmail.com', 1, 0, NULL, NULL, NULL, NULL, NULL, '::1', '2017-01-21 11:31:47', '2016-01-31 09:40:21', '2017-01-21 10:31:47'),
-(3, 'kiacilandak', '$2a$10$mNcyCWJX..pH3d3bthlU8./xR1mgXzTJVkzOokUZYXVK.hfm1V.vW', 'reinterpret.cast128@gmail.com', 1, 0, NULL, NULL, NULL, NULL, '5170de1902d82c5b28479c49c9e7e5fb', '114.121.132.143', '0000-00-00 00:00:00', '2016-04-26 11:20:19', '2016-04-27 02:15:02'),
-(4, 'darksqueeze', '$2a$10$1WoIqZURMbRicSW/Iu.GOOIKUq5V9M.o67wZ8lvgiYI6L/Gxx5Nsm', 'gifarydhimas@gmail.com', 1, 0, NULL, NULL, NULL, 'dhimas98@gmail.com', '7ff435eab60db83fc2264b608cb73ad1', '115.178.216.46', '2016-04-26 23:26:42', '2016-04-26 22:39:12', '2016-04-27 03:30:17');
+(1, 'gifarydhimas', '$2a$10$a2ZDBIeG3r7GbQKMHtTvjesT5XNQ/5B47L6AFyBQ2nqztqOKw6mZy', 'gifarydhimas@yahoo.com', 1, 0, NULL, NULL, NULL, NULL, '8dffa36cac0158010fee7f169009483d', '::1', '2017-01-27 08:45:02', '2016-01-30 08:55:01', '2017-01-27 07:45:02');
 
 -- --------------------------------------------------------
 

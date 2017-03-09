@@ -25,6 +25,7 @@ class Welcome extends CI_Controller {
 
 	public function loginok()
 	{
-		echo "Login: OK";
+		$this->load->helper('url');
+		$this->load->view('welcome');
 	}
 }

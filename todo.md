@@ -5,3 +5,5 @@ To-Do:
 - [*] encryption_key
 - [ ] log_threshold
 - [ ] 404_override -> routes
+- [ ] add user level and role {Customer, CourtProvider, Employee [those who maintains the business], Admin}
+- [ ] decide the naming convention about Controllers
