@@ -80,28 +80,70 @@
               <!------------------------------------- Modal Login ----------------------------------------->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
      <!-- Modal content-->
+            <?php
+            $login = array(
+                'name'  => 'login',
+                'id'    => 'login',
+                'value' => set_value('login'),
+                'maxlength' => 80,
+                'size'  => 30,
+                'class' => 'form-control',
+                'autofocus' => 1,
+                'required' => 'required'
+            );
+            if ($login_by_username AND $login_by_email) {
+                $login_label = 'Email or login';
+                $login['placeholder'] = 'Email or Username';
+            } else if ($login_by_username) {
+                $login_label = 'Login';
+                $login['placeholder'] = 'Username';
+            } else {
+                $login_label = 'Email';
+                $login['placeholder'] = 'Email';
+            }
+            $password = array(
+                'name'  => 'password',
+                'id'    => 'password',
+                'size'  => 30,
+                'class' => 'form-control',
+                'placeholder' => 'Password',
+                'required' => 'required'
+            );
+            $remember = array(
+                'name'  => 'remember',
+                'id'    => 'remember',
+                'value' => 1,
+                'checked'   => set_value('remember'),
+                'style' => 'margin:0;padding:0',
+            );
+            $captcha = array(
+                'name'  => 'captcha',
+                'id'    => 'captcha',
+                'maxlength' => 8,
+            );
+            ?>
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body">
-  <form>
+  <?php echo form_open(site_url()); ?>
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
+      <label for="email"><?= $login_label; ?></label>
+      <input type="email" class="form-control" id="<?= $login['id'];?>" placeholder="<?= $login['placeholder']; ?>">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <input type="password" class="form-control" id="<?= $password['id']; ?>" placeholder="<?= $password['placeholder']; ?>">
     </div>
     <div class="checkbox">
       <label><input type="checkbox"> Remember me</label>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+  <?php echo form_close(); ?>
 </div>
 </p>
         </div>
@@ -146,6 +188,7 @@
           
      </div>
     <button type="submit" class="btn btn-primary my-btn">Submit</button>
+    <br><br>
   </form>
     
         </div>

@@ -9,6 +9,7 @@ $login = array(
 	'autofocus' => 1,
 	'required' => 'required'
 );
+echo $login_by_username;
 if ($login_by_username AND $login_by_email) {
 	$login_label = 'Email or login';
 	$login['placeholder'] = 'Email or Username';
