@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Awesomess - Portfolio Bootstrap Theme</title>
+    <meta name="description" content="Your Description Here">
+    <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
+    <meta name="author" content="ThemeForces.Com">
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="<?= base_url('HTML/Skuy/img/favicon.ico'); ?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?= base_url('HTML/Skuy/img/apple-touch-icon.png'); ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?= base_url('HTML/Skuy/img/apple-touch-icon-72x72.png'); ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?= base_url('HTML/Skuy/img/apple-touch-icon-114x114.png'); ?>">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="<?= base_url('HTML/Skuy/css/bootstrap.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('HTML/Skuy/fonts/font-awesome/css/font-awesome.css'); ?>">
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="<?= base_url('HTML/Skuy/css/style.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('HTML/Skuy/css/responsive.css'); ?>">
+
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/modernizr.custom.js'); ?>"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="tf-home">
+        <div class="overlay">
+            <div id="sticky-anchor"></div>
+            <nav id="tf-menu" class="navbar navbar-default">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand logo" href="index.html">Bascom!</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#tf-home">Home</a></li>
+						 <li><a href="#tf-service">About</a></li>
+				    	  <li><a href="#tf-about">News</a></li> 
+                        <li><a href="#tf-contact">Contact</a></li>
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+
+            <div class="container">
+                <div class="content">
+                    <h3>An athlete cannot run with money in his pockets. He must run with hope in his heart and dreams in his head.”</h3>
+                    <h3> Enjoy Your Game, Lets Do This!</h3>
+                    <br>
+					<a class="btn btn-primary my-btn" data-toggle="modal" data-target="#myModalRegister">Register</a>
+                    <a class="btn btn-primary my-btn2" data-toggle="modal" data-target="#myModal">Login</a>
+                </div>
+            </div>
+			  <!------------------------------------- Modal Login ----------------------------------------->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+	 <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+	</div>
+	<!-------------------------------------------- Modal Register ----------------------------------------------------->
+	
+	<!-- Modal -->
+  <div class="modal fade" id="myModalRegister" role="dialog">
+    <div class="modal-dialog">
+ 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Register</h4>
+        </div>
+        <div class="modal-body">
+	<div class="form-group">
+      <label for="namaLengkap">Nama Lengkap:</label>
+      <input type="namaLengkap" class="form-control" id="namaLengkap" placeholder="Enter Nama Lengkap">
+    </div>	
+	<div class="form-group">
+      <label for="username">Username:</label>
+      <input type="username" class="form-control" id="username" placeholder="Enter username">
+    </div>
+	<div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+	<div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+	<div class="form-group">
+      <label for="notelp">No Telepon:</label>
+      <input type="notelp" class="form-control" id="notelp" placeholder="Enter telpon">
+    </div>
+          
+	 </div>
+    <button type="submit" class="btn btn-primary my-btn">Submit</button>
+  </form>
+	
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"Register>Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+        </div>
+    </div>	
+	
+	
+    <div id="tf-service">
+        <div class="container">
+
+            <div class="col-md-4">
+
+                <div class="media">
+                  <div class="media-left media-middle">
+				  
+				  
+                    <i class="fa fa-motorcycle"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Futsal</h4>
+                    <p>Permainan bola yang dimainkan oleh dua tim, yang masing-masing beranggotakan lima orang. Tujuannya adalah memasukkan bola ke gawang lawan, dengan memanipulasi bola dengan kaki. Selain lima pemain utama, setiap regu juga diizinkan memiliki pemain cadangan.</p>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="media">
+                  <div class="media-left media-middle">
+                    <i class="fa fa-gears"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Badminton</h4>
+                    <p>suatu olahraga raket yang dimainkan oleh dua orang (untuk tunggal) atau dua pasangan (untuk ganda) yang saling berlawanan.</p>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="media">
+                  <div class="media-left media-middle">
+                    <i class="fa fa-heartbeat"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Basket</h4>
+                    <p> olahraga bola berkelompok yang terdiri atas dua tim beranggotakan masing-masing lima orang yang saling bertanding mencetak poin dengan memasukkan bola ke dalam keranjang lawan.</p>
+                  </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="tf-portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h3>My Latest Works</h3>
+                <hr>
+            </div>
+
+            <div class="space"></div>
+
+           <div id="tf-about">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                        <h3>News</h3>
+                        <br>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                        <p>Metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                        <br>
+                        <a href="#tf-why-me" class="btn btn-primary my-btn dark">Why Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <div id="tf-contact">
+        <div class="container">
+            <div class="section-title">
+                <h3>Contact Me</h3>
+                <p>Cras sit amet nibh libero, in gravida nulla. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                <hr>
+            </div>
+
+            <div class="space"></div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form id="contact">
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Name">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Email">
+                      </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Website">
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary my-btn dark">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="tf-footer">
+        <div class="container">
+             <div class="pull-left">
+                <p>2015 © Awesomess. All Rights Reserved. Designed and Coded by <a href="https://dribbble.com/jennpereira">Jenn</a> for <a href="https://themeforces.com">ThemeForces.Com</a></p>
+            </div>
+            <div class="pull-right"> 
+                <ul class="social-media list-inline">
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+                    <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                    <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+                    <li><a href="#"><span class="fa fa-behance"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/jquery.1.11.1.js'); ?>"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/bootstrap.js'); ?>"></script>
+
+    <!-- Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="<?= base_url('HTML/Skuy/js/main.js'); ?>"></script>
+
+  </body>
+</html>
