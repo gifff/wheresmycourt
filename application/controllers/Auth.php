@@ -37,7 +37,7 @@ class Auth extends CI_Controller
 	{
 		//force_ssl();
 		if ($this->tank_auth->is_logged_in()) {									// logged in
-			redirect('/welcome/loginok');
+			redirect('/customer/pilihLapangan');
 
 		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
 			redirect('/auth/send_again/');
@@ -88,7 +88,7 @@ class Auth extends CI_Controller
 							$data['login_by_username'],
 							$data['login_by_email'])) {								// success
 								$this->session->set_flashdata('message', 'Login OK!');
-								redirect('/welcome/');
+								redirect('/customer/pilihLapangan');
 					} else {
 						$errors = $this->tank_auth->get_error_message();
 						if (isset($errors['banned'])) {								// banned user
@@ -113,10 +113,10 @@ class Auth extends CI_Controller
 				}
 			}
 			$this->load->helper(array('url','form'));
+			$this->load->view('head');
 			$this->load->view('welcome', $data);
-			// $this->load->view('head');
 			// $this->load->view('auth/signin_form', $data);
-			// $this->load->view('foot');
+			$this->load->view('foot');
 		}
 	}
 
