@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Awesomess - Portfolio Bootstrap Theme</title>
+        <title><?= $this->config->item('website_name', 'tank_auth');?></title>
         <meta name="description" content="Your Description Here">
         <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
         <meta name="author" content="ThemeForces.Com">
@@ -48,7 +48,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand logo" href="index.html">S-kuy!</a>
+                            <a class="navbar-brand logo" href="<?= site_url(); ?>"><?= $this->config->item('website_name', 'tank_auth');?></a>
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
