@@ -18,6 +18,14 @@ class Customer extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		
+		$this->load->helper(array('form', 'url', 'security', 'force_ssl'));
+		$this->load->library('form_validation');
+		$this->load->library('tank_auth');
+	}
 	public function index()
 	{
 		$this->load->view('welcome_message');
@@ -26,5 +34,11 @@ class Customer extends CI_Controller {
 	public function loginok()
 	{
 		echo "Login: OK. You're Customer.";
+	}
+	public function pilihLapangan()
+	{
+		$this->load->view('head');
+		$this->load->view('pilih_lapangan');
+		$this->load->view('foot');
 	}
 }
