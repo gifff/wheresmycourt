@@ -4,7 +4,8 @@
                                 <h3>An athlete cannot run with money in his pockets. He must run with hope in his heart and dreams in his head.”</h3>
                                 <h3> Enjoy Your Game, Lets Do This!</h3>
                                 <br>
-                                <a class="btn btn-primary my-btn" data-toggle="modal" data-target="#myModalRegister">Register</a>
+                                <!-- <a class="btn btn-primary my-btn" data-toggle="modal" data-target="#myModalRegister">Register</a> -->
+                                <a class="btn btn-primary my-btn" href="<?php echo site_url('auth/register/');?>">Register</a>
                                 <a class="btn btn-primary my-btn2" data-toggle="modal" data-target="#myModal">Login</a>
                             </div>
                         </div>
