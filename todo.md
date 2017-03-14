@@ -1,8 +1,8 @@
 To-Do:
-- [*] database
-- [*] csrf_protection
-- [*] sess_driver
-- [*] encryption_key
+- [x] database
+- [x] csrf_protection
+- [x] sess_driver
+- [x] encryption_key
 - [ ] log_threshold
 - [ ] 404_override -> routes
 - [ ] add user level and role {Customer, CourtProvider, Employee [those who maintains the business], Admin}
