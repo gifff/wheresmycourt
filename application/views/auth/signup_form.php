@@ -74,7 +74,7 @@ $captcha = array(
 		
 			<?php echo form_label('Username', $username['id']); ?>
 			<?php echo form_input($username); ?>
-			<span style="color: red;"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></span>
+			<?php echo form_error($username['name'], '<span class="label label-danger">', '</span>'); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?>
 		
 	</div>
 	<?php } ?>
@@ -82,33 +82,33 @@ $captcha = array(
 		
 			<?php echo form_label('Email Address', $email['id']); ?>
 			<?php echo form_input($email); ?>
-			<span style="color: red;"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></span>
+			<?php echo form_error($email['name'], '<span class="label label-danger">', '</span>'); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?>
 		
 	</div>
 	<div class="form-group">
 		
 			<?php echo form_label('Password', $password['id']); ?>
 			<?php echo form_password($password); ?>
-			<span style="color: red;"><?php echo form_error($password['name']); ?></span>
+			<?php echo form_error($password['name'], '<span class="label label-danger">', '</span>'); ?>
 		
 	</div>
 	<div class="form-group">
 		
 			<?php echo form_label('Confirm Password', $confirm_password['id']); ?>
 			<?php echo form_password($confirm_password); ?>
-			<span style="color: red;"><?php echo form_error($confirm_password['name']); ?></span>
+			<?php echo form_error($confirm_password['name'], '<span class="label label-danger">', '</span>'); ?>
 		
 	</div>
 	<hr>
 	<div class="form-group">
 		<?php echo form_label('Nama', $nama['id']); ?>
 		<?php echo form_input($nama); ?>
-		<span style="color: red;"><?php echo form_error($nama['name']); ?></span>
+		<?php echo form_error($nama['name'], '<span class="label label-danger">', '</span>'); ?>
 	</div>
 	<div class="form-group">
 		<?php echo form_label('Telp', $telp['id']); ?>
 		<?php echo form_input($telp); ?>
-		<span style="color: red;"><?php echo form_error($telp['name']); ?></span>
+		<?php echo form_error($telp['name'], '<span class="label label-danger">', '</span>'); ?>
 	</div>
 
 	<hr>
@@ -116,33 +116,24 @@ $captcha = array(
 	<?php if ($captcha_registration) {
 		if ($use_recaptcha) { ?>
 	<div class="form-group">
-		
-			<td colspan="3"><?php echo $recaptcha_html; ?></td>
-		
-		
-			<td colspan="3" class="label-danger" style="color: white;">
-			<?php echo form_error('g-recaptcha-check'); ?>
-			</td>
-		
+			<?php echo $recaptcha_html; ?>
+			<?php echo form_error('g-recaptcha-check', '<span class="label label-danger">', '</span>'); ?>
 	</div>
 	<?php } else { ?>
 	<div class="form-group">
 		
-			<td colspan="3">
-				<p>Enter the code exactly as it appears:</p>
-				<?php echo $captcha_html; ?>
-			</td>
-		
+			<label>Enter the code exactly as it appears:</label>
+			<?php echo $captcha_html; ?>
 		
 			<?php echo form_label('Confirmation Code', $captcha['id']); ?>
 			<?php echo form_input($captcha); ?>
-			<td style="color: red;"><?php echo form_error($captcha['name']); ?></td>
+			<?php echo form_error($captcha['name'], '<span class="label label-danger">', '</span>'); ?>
 		
 	</div>
 	<?php }
 	} ?>
 
-<button onclick="javascript: window.location.href = '<?= site_url('/auth/login/'); ?>'" class="btn btn-default">&#0171; Back</button>
+<a href="<?= site_url('/auth/login/'); ?>" class="btn btn-default">&#0171; Back</a>
 <?php echo form_submit('register', 'Register', array('class' => 'btn btn-primary')); ?>
 <?php echo form_close(); ?>
 </div>

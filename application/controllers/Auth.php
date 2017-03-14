@@ -9,6 +9,7 @@ class Auth extends CI_Controller
 		$this->load->helper(array('form', 'url', 'security', 'force_ssl'));
 		$this->load->library('form_validation');
 		$this->load->library('tank_auth');
+		$this->lang->load('tank_auth', 'english');
 		// $this->load->library(array('tank_auth', 'e_kohort'));
 		// $this->lang->load('tank_auth', $this->e_kohort->get_lang());
 		// $this->load->vars(array(
@@ -81,26 +82,31 @@ class Auth extends CI_Controller
 					// trigger manual error for user who doesn't check the recaptcha checkbox
 					$data['errors']['recaptcha2'] = "Please check the checkbox!";
 				}
-					if ($this->tank_auth->login(
-							$this->form_validation->set_value('login'),
-							$this->form_validation->set_value('password'),
-							$this->form_validation->set_value('remember'),
-							$data['login_by_username'],
-							$data['login_by_email'])) {								// success
-								$this->session->set_flashdata('message', 'Login OK!');
-								redirect('/customer/pilihLapangan');
-					} else {
-						$errors = $this->tank_auth->get_error_message();
-						if (isset($errors['banned'])) {								// banned user
-							$this->_show_message($this->lang->line('auth_message_banned').' '.$errors['banned']);
+				if ($this->tank_auth->login(
+						$this->form_validation->set_value('login'),
+						$this->form_validation->set_value('password'),
+						$this->form_validation->set_value('remember'),
+						$data['login_by_username'],
+						$data['login_by_email'])) {								// success
 
-						} elseif (isset($errors['not_activated'])) {				// not activated user
-							redirect('/auth/send_again/');
+							$this->session->set_flashdata('message', 'Login OK!');
+							redirect('/customer/pilihLapangan');
+				} else {
+					$errors = $this->tank_auth->get_error_message();
 
-						} else {													// fail
-							foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
+					if (isset($errors['banned'])) {								// banned user
+						$this->_show_message($this->lang->line('auth_message_banned').' '.$errors['banned']);
+
+					} elseif (isset($errors['not_activated'])) {				// not activated user
+						redirect('/auth/send_again/');
+
+					} else {													// fail
+						foreach ($errors as $k => $v){
+							$this->form_validation->set_message($k, $this->lang->line($v));
+							$data['errors'][$k] = $this->lang->line($v);
 						}
 					}
+				}
 				//}
 			}
 			$data['show_captcha'] = FALSE;
@@ -313,6 +319,8 @@ class Auth extends CI_Controller
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
+					var_dump($errors);
+					exit;
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}

@@ -15,44 +15,44 @@
                                 <!-- Modal content-->
                                 <?php
                                 $login = array(
-                                'name'  => 'login',
-                                'id'    => 'login',
-                                'value' => set_value('login'),
-                                'maxlength' => 80,
-                                'size'  => 30,
-                                'class' => 'form-control',
-                                'autofocus' => 1,
-                                'required' => 'required'
+                                    'name'  => 'login',
+                                    'id'    => 'login',
+                                    'value' => set_value('login'),
+                                    'maxlength' => 80,
+                                    'size'  => 30,
+                                    'class' => 'form-control',
+                                    'autofocus' => 1,
+                                    'required' => 'required'
                                 );
                                 if ($login_by_username AND $login_by_email) {
-                                $login_label = 'Email or login';
-                                $login['placeholder'] = 'Email or Username';
+                                    $login_label = 'Email or login';
+                                    $login['placeholder'] = 'Email or Username';
                                 } else if ($login_by_username) {
-                                $login_label = 'Login';
-                                $login['placeholder'] = 'Username';
+                                    $login_label = 'Login';
+                                    $login['placeholder'] = 'Username';
                                 } else {
-                                $login_label = 'Email';
-                                $login['placeholder'] = 'Email';
+                                    $login_label = 'Email';
+                                    $login['placeholder'] = 'Email';
                                 }
                                 $password = array(
-                                'name'  => 'password',
-                                'id'    => 'password',
-                                'size'  => 30,
-                                'class' => 'form-control',
-                                'placeholder' => 'Password',
-                                'required' => 'required'
+                                    'name'  => 'password',
+                                    'id'    => 'password',
+                                    'size'  => 30,
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Password',
+                                    'required' => 'required'
                                 );
                                 $remember = array(
-                                'name'  => 'remember',
-                                'id'    => 'remember',
-                                'value' => 1,
-                                'checked'   => set_value('remember'),
-                                'style' => 'margin:0;padding:0',
+                                    'name'  => 'remember',
+                                    'id'    => 'remember',
+                                    'value' => 1,
+                                    'checked'   => set_value('remember'),
+                                    'style' => 'margin:0;padding:0',
                                 );
                                 $captcha = array(
-                                'name'  => 'captcha',
-                                'id'    => 'captcha',
-                                'maxlength' => 8,
+                                    'name'  => 'captcha',
+                                    'id'    => 'captcha',
+                                    'maxlength' => 8,
                                 );
                                 ?>
                                 <div class="modal-content">
@@ -67,14 +67,14 @@
                                             <input type="email" class="form-control" id="<?= $login['id'];?>" placeholder="<?= $login['placeholder']; ?>">-->
                                             <?php echo form_label($login_label, $login['id'], array('class' => 'sr-only')); ?>
                                             <?php echo form_input($login); ?>
-                                            <?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?>
+                                            <?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?'<span class="label label-danger">' . $errors[$login['name']] . '</span>':''; ?>
                                         </div>
                                         <div class="form-group">
                                             <!--<label for="<?= $password['id']; ?>">Password:</label>
                                             <input type="password" class="form-control" id="<?= $password['id']; ?>" placeholder="<?= $password['placeholder']; ?>">-->
                                             <?php echo form_label('Password', $password['id'], array('class' => 'sr-only')); ?>
                                             <?php echo form_password($password); ?>
-                                            <?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?>
+                                            <?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']]) ? '<span class="label label-danger">' . $errors[$password['name']] . '</span>':''; ?>
                                         </div>
                                         <div class="form-group">
                                             <?php if ($show_captcha) {
