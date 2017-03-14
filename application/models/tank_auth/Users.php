@@ -132,7 +132,8 @@ class Users extends CI_Model
 
 		if ($this->db->insert($this->table_name, $data)) {
 			$user_id = $this->db->insert_id();
-			if ($activated)	$this->create_profile($user_id);
+			// if ($activated)	$this->create_profile($user_id);
+			$this->create_profile($user_id);
 			return array('user_id' => $user_id);
 		}
 		return NULL;
@@ -166,7 +167,7 @@ class Users extends CI_Model
 			$this->db->where('id', $user_id);
 			$this->db->update($this->table_name);
 
-			$this->create_profile($user_id);
+			// $this->create_profile($user_id);
 			return TRUE;
 		}
 		return FALSE;
@@ -391,6 +392,15 @@ class Users extends CI_Model
 	{
 		$this->db->where('user_id', $user_id);
 		$this->db->delete($this->profile_table_name);
+	}
+
+	public function update_profile($user_id, $data)
+	{
+		$this->db->set($data);
+
+		$this->db->where('user_id', $user_id);
+		$this->db->update($this->profile_table_name);
+		return $this->db->affected_rows() > 0;
 	}
 }
 

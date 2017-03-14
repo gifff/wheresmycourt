@@ -20,20 +20,20 @@ $email = array(
 	'required' => 'required',
 	'class' => 'form-control'
 );
-$nama = array(
-	'name'	=> 'nama',
-	'id'	=> 'nama',
-	'value'	=> set_value('nama'),
-	'maxlength'	=> 80,
+$fullname = array(
+	'name'	=> 'fullname',
+	'id'	=> 'fullname',
+	'value'	=> set_value('fullname'),
+	'maxlength'	=> 64,
 	'size'	=> 30,
 	'required' => 'required',
 	'class' => 'form-control'
 );
-$telp = array(
-	'name'	=> 'telp',
-	'id'	=> 'telp',
-	'value'	=> set_value('telp'),
-	'maxlength'	=> 80,
+$phone = array(
+	'name'	=> 'phone',
+	'id'	=> 'phone',
+	'value'	=> set_value('phone'),
+	'maxlength'	=> 16,
 	'size'	=> 30,
 	'required' => 'required',
 	'class' => 'form-control'
@@ -101,14 +101,14 @@ $captcha = array(
 	</div>
 	<hr>
 	<div class="form-group">
-		<?php echo form_label('Nama', $nama['id']); ?>
-		<?php echo form_input($nama); ?>
-		<?php echo form_error($nama['name'], '<span class="label label-danger">', '</span>'); ?>
+		<?php echo form_label('Full Name', $fullname['id']); ?>
+		<?php echo form_input($fullname); ?>
+		<?php echo form_error($fullname['name'], '<span class="label label-danger">', '</span>'); ?>
 	</div>
 	<div class="form-group">
-		<?php echo form_label('Telp', $telp['id']); ?>
-		<?php echo form_input($telp); ?>
-		<?php echo form_error($telp['name'], '<span class="label label-danger">', '</span>'); ?>
+		<?php echo form_label('Phone', $phone['id']); ?>
+		<?php echo form_input($phone); ?>
+		<?php echo form_error($phone['name'], '<span class="label label-danger">', '</span>'); ?>
 	</div>
 
 	<hr>

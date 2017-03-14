@@ -489,6 +489,12 @@ class Tank_auth
 		return FALSE;
 	}
 
+	function update_profile($user_id, $name, $phone)
+	{
+		$data = array('name' => $name, 'phone' => $phone);
+		return $this->ci->users->update_profile($user_id, $data);
+	}
+
 	/**
 	 * Get error message.
 	 * Can be invoked after any failed operation such as login or register.
