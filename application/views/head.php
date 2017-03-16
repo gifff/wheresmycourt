@@ -53,10 +53,17 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#tf-home">Home</a></li>
-                                <li><a href="#tf-service">About</a></li>
-                                <li><a href="#tf-about">News</a></li>
-                                <li><a href="#tf-contact">Contact</a></li>
+                                <?php if(!is_null($username) && !is_null($user_id)) { ?>
+                                    <li><a href="<?= site_url('/customer/pilihLapangan'); ?>">Home</a></li>
+                                    <li><a href="#tf-news">News</a></li>
+                                    <li><a href="#tf-profile">Profile</a></li>
+                                    <li><a href="<?= site_url('/auth/logout'); ?>">Log out</a></li>
+                                <?php } else { ?>
+                                    <li><a href="<?= site_url('/auth/login'); ?>">Home</a></li>
+                                    <li><a href="#tf-service">About</a></li>
+                                    <li><a href="#tf-about">News</a></li>
+                                    <li><a href="#tf-contact">Contact</a></li>
+                                <?php } ?>
                             </ul>
                             </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
