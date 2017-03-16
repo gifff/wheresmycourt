@@ -30,6 +30,11 @@ class Tank_auth
 		$this->ci->load->database();
 		$this->ci->load->model('tank_auth/users');
 
+		$this->ci->load->vars(array(
+			'user_id' => $this->get_user_id(),
+			'username' => $this->get_username(),
+			));
+
 		// Try to autologin
 		$this->autologin();
 	}
@@ -147,6 +152,16 @@ class Tank_auth
 	function get_username()
 	{
 		return $this->ci->session->userdata('username');
+	}
+
+	function get_user_level()
+	{
+		$user_id = $this->ci->session->userdata('user_id');
+
+		if(!is_null($user = $this->ci->users->get_user_by_id($user_id, TRUE))) {
+			return $user->access_level;
+		}
+		return NULL;
 	}
 
 	/**
