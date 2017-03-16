@@ -8,3 +8,5 @@ To-Do:
 - [ ] add user level and role {Customer, CourtProvider, Employee [those who maintains the business], Admin}
 - [ ] decide the naming convention about Controllers
 - [ ] utilizes the form_validation's set_message to show error message in registration and login form
+- [ ] update the version of phpass
+- [ ] added more superuser ability to control users, lapangan, arena, booking, invoice, payment. etc.
