@@ -6,11 +6,9 @@
                   <div class="media">
                     <div class="media-left media-middle">
                       
-                      
-                      
                     </div>
                     <div class="media-body">
-                      <a href="#tf-contact" class="btn btn-primary my-btna">Booking</a>
+                      <a href="<?= current_url() . "/futsal"; ?>" class="btn btn-primary my-btna">Booking</a>
                     </div>
                   </div>
                 </div>
@@ -24,7 +22,7 @@
                       
                     </div>
                     <div class="media-body">
-                      <a href="#tf-contact" class="btn btn-primary my-btna">Booking</a>
+                      <a href="<?= current_url() . "/badminton"; ?>" class="btn btn-primary my-btna">Booking</a>
                       
                     </div>
                   </div>
@@ -39,7 +37,7 @@
                       
                     </div>
                     <div class="media-body">
-                      <a href="#tf-contact" class="btn btn-primary my-btna">Booking</a>
+                      <a href="<?= current_url() . "/basket"; ?>" class="btn btn-primary my-btna">Booking</a>
                     </div>
                   </div>
                 </div>
@@ -54,19 +52,23 @@
                 </div>
                 <div class="space"></div>
                 <div id="tf-about">
-                  <div class="overlay">
+                  
                     <div class="container">
                       <div class="row">
-                        <div class="col-md-6 col-md-offset-6">
+                        <div class="col-md-5">
+                        
+                          <img class="img-responsive" src="<?= base_url("/public/images/") . "testNews.jpg"; ?>" style="height:200px;">
+
+                        </div>
+                        <div class="col-md-7">
                           <h3>News</h3>
                           <br>
-                          <p>Cras sit amet nibh libero, in gravida nulla. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                          <p>Metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                          <p>Salam Olahraga, akan diadakan lomba futsal Antar Mahasiswa di Malang. Segera daftarkan team terbaik anda!!!</p>
                           <br>
-                          <a href="#tf-why-me" class="btn btn-primary my-btn dark">Why Hire Me</a>
+                          <a href="#tf-why-me" class="btn btn-primary my-btn dark">Read Full Story</a>
                         </div>
                       </div>
-                    </div>
+                  
                   </div>
                 </div>
               </div>

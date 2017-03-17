@@ -143,13 +143,19 @@ $config['db_table_prefix'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| E-Kohort settings
+| WMC settings
 |
-| These are e-Kohort custom settings
+| These are WMC custom settings
 |
 |--------------------------------------------------------------------------
 */
-// E-Kohort pagination config
+
+// RELATIVE TO BASE PATH OF THE SITE
+// DON'T FORGET THE TRAILLING SLASH!
+$config['fields_photo_path'] = "/public/photos/fields/";
+
+
+// WMC pagination config
 $config['entities_pag'] = array(
 		'per_page' => 20,
 		'num_links' => 2,
@@ -180,74 +186,12 @@ $config['persons_pag'] = array_merge($config['entities_pag'], array(
 		'num_links' => 3,
 		'uri_segment' => 3
 	));
-// E-Kohort constants
+// WMC constants
 $config['ekohort_constant'] = array(
-	'lab_golongan_darah' => array(
-		'null' => '-',
-		'A' => 'A',
-		'B' => 'B',
-		'O' => 'O',
-		'AB' => 'AB'
-	),
-	'kode_wilayah' => array(
-		'GS' => 'Gandaria Selatan',
-		'CS' => 'Cipete Selatan',
-		'CB' => 'Cilandak Barat',
-		'LB' => 'Lebak Bulus',
-		'PL' => 'Pondok Labu',
-		'LW' => 'Luar Wilayah'
-	),
-	'ibu_status_gizi' => array(
-		'null' => '-',
-		'N' => 'N',
-		'M' => 'M'
-	),
-	'bayi_kepala_thd_pap' => array(
-		'null' => '-',
-		'M' => 'M',
-		'BM' => 'BM'
-	),
-	'bayi_jumlah_janin' => array(
-		'null' => '-',
-		'T' => 'T',
-		'G' => 'G'
-	),
-	'bayi_presentasi' => array(
-		'null' => '-',
-		'KP' => 'KP',
-		'BS' => 'BS',
-		'LLO' => 'LLO'
-	),
-	'status_imunisasi_tt' => array(
-		'null' => '-',
-		'T0' => 'T0',
-		'T1' => 'T1',
-		'T2' => 'T2',
-		'T3' => 'T3',
-		'T4' => 'T4',
-		'T5' => 'T5'
-	),
-	'tb_obat' => array(
-		'null' => '-',
-		'R' => 'R',
-		'H' => 'H',
-		'Z' => 'Z',
-		'E' => 'E'
-	),
-	'kr_keadaan_tiba' => array(
-		'null' => '-',
-		'H' => 'H',
-		'M' => 'M'
-	),
-	'kr_keadaan_pulang' => array(
-		'null' => '-',
-		'H' => 'H',
-		'M' => 'M'
-	),
-	'tri_state' => array(
-		'null' => ' ',
-		'P' => '+',
-		'N' => '-'
+	'field_type' => array(
+		1 => 'Futsal',
+		2 => 'Basket',
+		3 => 'Badminton'
 	)
 );
 $config['lang_list'] = array(

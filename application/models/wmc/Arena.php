@@ -35,6 +35,20 @@ class Arena extends CI_Model
 		return NULL;
 	}
 
+	function get_all_by_id($field_id)
+	{
+		$query = $this->db->where('lapangan_id', $field_id)->get($this->table_name);
+		if ($query->num_rows() > 0) return $query->result();
+		return NULL;
+	}
+
+	function get_lowest_price($field_id)
+	{
+		$query = $this->db->where('lapangan_id', $field_id)->order_by('harga_per_jam', 'ASC')->get($this->table_name, 1);
+		if($query->num_rows() > 0)
+			return $query->row()->harga_per_jam;
+		return NULL;
+	}
 	/**
 	 * Create new user record
 	 *

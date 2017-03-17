@@ -3,7 +3,7 @@
 class Lapangan extends CI_Model
 {
 	private $table_name			= 'lapangan';			// user accounts
-	private $profile_table_name	= 'user_profiles';	// user profiles
+	// private $profile_table_name	= 'user_profiles';	// user profiles
 
 	function __construct()
 	{
@@ -11,7 +11,7 @@ class Lapangan extends CI_Model
 
 		$ci =& get_instance();
 		$this->table_name			= $ci->config->item('db_table_prefix', 'tank_auth').$this->table_name;
-		$this->profile_table_name	= $ci->config->item('db_table_prefix', 'tank_auth').$this->profile_table_name;
+		// $this->profile_table_name	= $ci->config->item('db_table_prefix', 'tank_auth').$this->profile_table_name;
 	}
 
 	/**
@@ -35,6 +35,16 @@ class Lapangan extends CI_Model
 		$query = $this->db->get($this->table_name);
 		if ($query->num_rows() > 0) return $query->result();
 		return NULL;
+	}
+
+	function get_lapangan_by_type($type)
+	{
+		$this->db->where('type', $type);
+
+		$query = $this->db->get($this->table_name);
+		if ($query->num_rows() > 0) return $query->result();
+		return NULL;
+
 	}
 // 	/**
 // 	 * Get user record by login (username or email)

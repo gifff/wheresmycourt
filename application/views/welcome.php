@@ -9,7 +9,7 @@
                                 <a class="btn btn-primary my-btn2" data-toggle="modal" data-target="#myModal">Login</a>
                             </div>
                         </div>
-                        <!------------------------------------- Modal Login ----------------------------------------->
+                        <!--#################################### Modal Login ####################################-->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
@@ -103,14 +103,14 @@
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         <?php echo form_close(); ?>
                                     </div>
-                                </p>
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
-                    <!-------------------------------------------- Modal Register ----------------------------------------------------->
+                    <!--#################################### Modal Register ####################################-->
                     
                     <!-- Modal -->
                     <div class="modal fade" id="myModalRegister" role="dialog">

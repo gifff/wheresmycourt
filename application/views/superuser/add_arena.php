@@ -1,4 +1,4 @@
-<h3>add lapangan</h3>
+<h3>add arena</h3>
 <?php 
 $nama = array(
     'name'  => 'nama',

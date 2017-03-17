@@ -65,6 +65,6 @@
                                     <li><a href="#tf-contact">Contact</a></li>
                                 <?php } ?>
                             </ul>
-                            </div><!-- /.navbar-collapse -->
-                            </div><!-- /.container-fluid -->
-                        </nav>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>

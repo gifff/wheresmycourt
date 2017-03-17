@@ -245,7 +245,7 @@ ul.cat.list-inline li a:hover{
 .nopadding{ padding:  0;}
 
 #tf-about{
-	background: url(../img/07.jpg);
+	/*background: url(../../../public/images/testNews.jpg);*/
 	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;

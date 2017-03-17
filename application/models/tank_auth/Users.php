@@ -24,6 +24,15 @@ class Users extends CI_Model
 		$this->profile_table_name	= $ci->config->item('db_table_prefix', 'tank_auth').$this->profile_table_name;
 	}
 
+	function get_users_by_level($user_level)
+	{
+		$this->db->where('access_level', $user_level);
+
+		$query = $this->db->get($this->table_name);
+		if ($query->num_rows() > 0) return $query->result();
+		return NULL;
+	}
+
 	/**
 	 * Get user record by Id
 	 *
@@ -401,6 +410,21 @@ class Users extends CI_Model
 		$this->db->where('user_id', $user_id);
 		$this->db->update($this->profile_table_name);
 		return $this->db->affected_rows() > 0;
+	}
+
+	public function get_profile($user_id)
+	{
+		$query = $this->db->where('user_id', $user_id)->get($this->profile_table_name);
+		if($query->num_rows() > 0)
+			return $query->row();
+		return NULL;
+	}
+	public function get_users()
+	{
+		$query = $this->db->get($this->table_name);
+		if($query->num_rows() > 0)
+			return $query->result(); // $query->row();
+		return NULL;
 	}
 }
 

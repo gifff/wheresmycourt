@@ -93,3 +93,8 @@ defined('WMC_ROLE_ADMIN')		OR define('WMC_ROLE_ADMIN', 10);
 defined('WMC_ROLE_MAN')			OR define('WMC_ROLE_MAN', 7);
 defined('WMC_ROLE_PROVIDER')	OR define('WMC_ROLE_PROVIDER', 5);
 defined('WMC_ROLE_CUSTOMER')	OR define('WMC_ROLE_CUSTOMER', 1);
+
+
+defined('WMC_FIELD_FUTSAL')	OR define('WMC_FIELD_FUTSAL', 1);
+defined('WMC_FIELD_BASKET')	OR define('WMC_FIELD_BASKET', 2);
+defined('WMC_FIELD_BADMINTON')	OR define('WMC_FIELD_BADMINTON', 3);
