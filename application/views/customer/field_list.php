@@ -46,7 +46,7 @@
             </div>
             <div class="col-md-5">
                 <h3>No fields available</h3>
-                <h4>We are sorry but up to this magnitude, there's not fields available.</h4>
+                <h4>We are sorry but up to this magnitude, there's no field available.</h4>
                 <p>
                     Please come back here again later. :)
                 </p>

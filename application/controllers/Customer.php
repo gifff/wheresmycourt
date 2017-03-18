@@ -26,6 +26,7 @@ class Customer extends CI_Controller {
 		$this->load->helper(array('form', 'url', 'security', 'force_ssl'));
 		$this->load->library('form_validation');
 		$this->load->library('tank_auth');
+		$this->load->library('session');
 		if(!$this->tank_auth->is_logged_in())
 			redirect('/auth/login');
 
@@ -36,12 +37,7 @@ class Customer extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('welcome_message');
-	}
-
-	public function loginok()
-	{
-		echo "Login: OK. You're Customer.";
+		redirect('/customer/pilihLapangan');
 	}
 	public function pilihLapangan($lapangan = NULL)
 	{
@@ -112,6 +108,26 @@ class Customer extends CI_Controller {
 			redirect('/customer/pilihLapangan');
 	}
 
+	function confirmInvoice()
+	{
+		$this->form_validation->set_rules("intchk", "INTCHK", "trim|required|xss_clean|exact_length[32]");
+		if($this->form_validation->run())
+		{
+			$this->load->model('wmc/booking');
+			$db = unserialize(base64_decode($this->session->flashdata($this->form_validation->set_value('intchk'))));
+
+			$data = $db;
+			$data['chosenArena'] = $chArena = $this->arena->get_arena_by_id($db['arena_id']);
+			$data['field'] = $this->lapangan->get_lapangan_by_id($chArena->lapangan_id);
+
+			unset($db['price']);
+			$this->booking->create_booking($db);
+			$this->load->view('head');
+			$this->load->view('customer/receipt', $data);
+			$this->load->view('foot');
+		} else 
+			redirect('/customer/');
+	}
 	function book($field_id)
 	{
 		$field = $this->lapangan->get_lapangan_by_id($field_id);
@@ -122,27 +138,54 @@ class Customer extends CI_Controller {
 			foreach ($arena as $arr) {
 				$arenaOpt[$arr->id] = $arr->nama . " -- Rp" . $arr->harga_per_jam;
 			}
-			$data = array('field' => $field, 'arenaOpt' => $arenaOpt, 'field_id' => $field_id);
 
 			$jamOpt = array(
 			    '00.00','01.00','02.00','03.00','04.00','05.00','06.00','07.00','08.00','09.00','10.00','11.00','12.00',
 			    '13.00','14.00','15.00','16.00','17.00','18.00','19.00','20.00','21.00','22.00','23.00'
 			    );
-			$durasiOpt = array('1', '2', '3', '4', '5');
+			$durasiOpt = array(1 => '1 Jam', 2 => '2 Jam', 3 => '3 Jam', 4 => '4 Jam', 5 => '5 Jam');
+			$data = array(
+				'field' => $field, 
+				'arenaOpt' => $arenaOpt, 
+				'field_id' => $field_id,
+				'jamOpt' => $jamOpt,
+				'durasiOpt' => $durasiOpt);
 
 			$this->arrayValidationComparator['arena'] = $arenaOpt;
 			$this->arrayValidationComparator['jam'] = $jamOpt;
 			$this->arrayValidationComparator['durasi'] = $durasiOpt;
 
 
-			$this->form_validation->set_rules('nama', 'Nama',"trim|max_length[32]");
+			$this->form_validation->set_rules('tanggal', 'Tanggal',"trim|max_length[32]");
 			$this->form_validation->set_rules('jam', 'Jam',"trim|required|xss_clean|callback__array_match[jam]");
 			$this->form_validation->set_rules('durasi', 'Durasi',"trim|required|xss_clean|callback__array_match[durasi]");
 			$this->form_validation->set_rules('arena', 'Arena',"trim|required|xss_clean|callback__array_match[arena]");
 			$this->form_validation->set_message('_array_match', "The page was hacked or had an error, but we already fix it automatically!<br>If the error keep appearing, feel free to report it to: me@gdf.my.id!");
-
 			$this->load->view('head');
-			$this->load->view('customer/book_form', $data);
+			if($this->form_validation->run())
+			{
+				$this->load->model('wmc/booking');
+				$this->load->helper('string');
+				$db = array(
+					'user_id' => $this->tank_auth->get_user_id(),
+					'arena_id' => $this->form_validation->set_value('arena'),
+					'jam_tanggal' => $this->form_validation->set_value('tanggal') . " " . $this->form_validation->set_value('jam') . ":00:00",
+					'durasi' => $this->form_validation->set_value('durasi'),
+					'kode_booking' => strtoupper(random_string('alpha', 8)),
+					'price' => $this->form_validation->set_value('durasi') * $this->arena->get_arena_by_id($this->form_validation->set_value('arena'))->harga_per_jam
+					);
+				$data['chosenArena'] = $chArena = $this->arena->get_arena_by_id($db['arena_id']);
+
+				if(is_null($chArena))
+					redirect('/customer/pilihLapangan');
+
+				$flash_id = $data['flash_id'] = random_string('md5');
+				$this->session->set_flashdata($flash_id, base64_encode(serialize($db)));
+				$this->load->view('customer/invoice', array_merge($db, $data));
+				// $this->booking->create_booking(array());
+			} else {
+				$this->load->view('customer/book_form', $data);
+			}
 			$this->load->view('foot');
 		} else
 			redirect('/customer/pilihLapangan');
