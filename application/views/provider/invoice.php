@@ -1,7 +1,7 @@
             <div id="tf-portfolio">
               <div class="container">
                 <div class="section-title">
-                  <h1 class="page-header">Invoice</h1>
+                  <h1 class="page-header"><?= $field->nama; ?></h1>
                   <hr>
                 </div>
                 <div class="space"></div>
@@ -10,7 +10,7 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-md-4">
-                <a class="btn btn-primary" href="<?= site_url("/customer/lapangan/" . $chosenArena->lapangan_id); ?>"><span class="glyphicon glyphicon-chevron-left">Back</span></a>
+                <a class="btn btn-primary" href="<?= site_url("/customer/book/" . $field_id); ?>"><span class="glyphicon glyphicon-chevron-left">Back</span></a>
             </div>
         </div>
         
@@ -18,16 +18,10 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="row">
-                    <h3 class="section-title">Details</h3>
+                    <h3 class="section-title">Booking Confirmation</h3>
                 </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        Lapangan
-                    </div>
-                    <div class="col-md-7">
-                        <?= $field->nama; ?>
-                    </div>
-                </div>
+                <?php echo form_open('/customer/confirmInvoice', '', array('intchk' => $flash_id)); ?>
+
                 <div class="row">
                     <div class="col-md-5">
                         Arena
@@ -42,14 +36,6 @@
                     </div>
                     <div class="col-md-7">
                         <?= $jam_tanggal; ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        Kode Booking
-                    </div>
-                    <div class="col-md-7">
-                        <?= $kode_booking; ?> Jam
                     </div>
                 </div>
                 <div class="row">
@@ -69,7 +55,12 @@
                         <?= $price; ?>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <?php echo form_submit('mysubmit', "Confirm!", array('class' => 'btn btn-primary')); ?>
+                    </div>
+                </div>
+                <?php echo form_close(); ?>
             </div>
         </div>
         <!-- /.row -->

@@ -46,14 +46,6 @@
                 </div>
                 <div class="row">
                     <div class="col-md-5">
-                        Kode Booking
-                    </div>
-                    <div class="col-md-7">
-                        <?= $kode_booking; ?> Jam
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5">
                         Durasi
                     </div>
                     <div class="col-md-7">
